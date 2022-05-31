@@ -479,6 +479,10 @@ PrefabInstance:
       value: WolfContainer
       objectReference: {fileID: 0}
     - target: {fileID: 2808622647345693308, guid: dd053736dd3ee4d4d89e17f71130f655, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808622647345693308, guid: dd053736dd3ee4d4d89e17f71130f655, type: 3}
       propertyPath: m_TagString
       value: EnemySmol
       objectReference: {fileID: 0}
@@ -631,7 +635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &659979481
 Light:
   m_ObjectHideFlags: 0
@@ -721,6 +725,10 @@ PrefabInstance:
       objectReference: {fileID: 1215924618}
     - target: {fileID: 5695416793840868343, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
       propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5845057594535218371, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
+      propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7339781105315659686, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
@@ -746,6 +754,10 @@ PrefabInstance:
     - target: {fileID: 7339781105527582764, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
       propertyPath: m_Name
       value: PlayerContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339781105527582764, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7339781105527582765, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
       propertyPath: m_RootOrder
@@ -837,11 +849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7339781107270451449, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.40500003
       objectReference: {fileID: 0}
     - target: {fileID: 7339781107270451449, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7407247655859466977, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
       propertyPath: sceneViewId
@@ -917,6 +929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Gen
       objectReference: {fileID: 0}
+    - target: {fileID: 7487226862257436950, guid: 1ff92f7a242cd49329ab29083b4f758e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7487226862257436951, guid: 1ff92f7a242cd49329ab29083b4f758e, type: 3}
       propertyPath: theEnemy
       value: 
@@ -955,7 +971,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 296008313}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1072598156 stripped
 GameObject:
@@ -1137,7 +1153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1261175478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,6 +1428,10 @@ PrefabInstance:
     - target: {fileID: 5846560644325959261, guid: 0c67179e00f384e9dbc41c8a7fd76980, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846560644325959261, guid: 0c67179e00f384e9dbc41c8a7fd76980, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c67179e00f384e9dbc41c8a7fd76980, type: 3}
