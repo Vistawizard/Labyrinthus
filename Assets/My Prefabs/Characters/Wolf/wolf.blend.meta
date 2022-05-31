@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0dcc13ed1276041d997cc12bb0fc42ba
+guid: 4924a2c8425314611b7296d7661fa911
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,28 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 832e39ea2c7daed49955ae07fdcf2af2, type: 2}
+      name: BODY
+    second: {fileID: 2100000, guid: b957742c5b9bfd441b9b330c8b55d0c5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: f8167f8f3c12c2847be8d8c02801e51f, type: 2}
+      name: eyecolor
+    second: {fileID: 2100000, guid: e0600b3da3da3b44f92e3c1426012cc3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: 002a2903c6b96be4d9072cf7885068ee, type: 2}
+      name: iron
+    second: {fileID: 2100000, guid: e05b1b6add912824cab6611dd89cff88, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: 66bf18a05cdf926439d59604a2062d65, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.005
-    second: {fileID: 2100000, guid: 2bd6bdde416cb3b468f39aab23d1e47c, type: 2}
+      name: pupilblack
+    second: {fileID: 2100000, guid: 03369e600c2133344a177eb63e3c70a4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -59,7 +54,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -110,7 +105,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.5
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

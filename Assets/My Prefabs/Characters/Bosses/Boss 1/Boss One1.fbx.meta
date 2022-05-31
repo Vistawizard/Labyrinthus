@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4924a2c8425314611b7296d7661fa911
+guid: 13811b95963595547a8610f7384fa9e5
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BODY
-    second: {fileID: 2100000, guid: b957742c5b9bfd441b9b330c8b55d0c5, type: 2}
+      name: Brown
+    second: {fileID: 2100000, guid: 33a465eb50d43fc43a65eee09d36d9b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cloth
+    second: {fileID: 2100000, guid: 6651339fc695617418d89613273789a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Devilish red
+    second: {fileID: 2100000, guid: 77e60f8d4ddd1a2459a0de731615e371, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glowy black
+    second: {fileID: 2100000, guid: b21bb4048de9d47168ec68f8f1fcfff3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orange
+    second: {fileID: 2100000, guid: 40ae7dcc25e65c2458afad10ae763b5d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -39,7 +59,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +110,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
