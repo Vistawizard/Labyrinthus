@@ -863,6 +863,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: CanGrab
       objectReference: {fileID: 0}
+    - target: {fileID: 7712929784163755605, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7892178251659309762, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
       propertyPath: gameOverScreen
       value: 
