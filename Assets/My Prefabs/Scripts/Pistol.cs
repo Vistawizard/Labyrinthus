@@ -10,7 +10,7 @@ public class Pistol : MonoBehaviour
     public float damage = 10f;
     public float range = 100f;
 
-    public float bullets = 10f;
+    public float bullets;
     public Transform bulletTxt;
 
     public Camera fpsCam;
