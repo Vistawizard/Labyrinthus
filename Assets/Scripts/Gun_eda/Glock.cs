@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Gun : Item
+public class Glock : Gun
 {
-    public abstract override void Use();
+   public override void Use()
+   {
+      
+   }
 }
