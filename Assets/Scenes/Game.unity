@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657054054}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e21a72dce3a904006b06656a512bb96e, type: 3}
   m_Name: 
@@ -1548,6 +1548,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 89dd79748bc7b42f7836025706e3372f, type: 3}
       propertyPath: m_Name
       value: OnGroundPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89dd79748bc7b42f7836025706e3372f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 89dd79748bc7b42f7836025706e3372f, type: 3}
       propertyPath: m_TagString

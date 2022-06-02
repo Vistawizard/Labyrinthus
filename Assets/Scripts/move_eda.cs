@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using Photon.Pun;
 
 public class move_eda : MonoBehaviour, IDamageable
 {
-   public float walkingSpeed = 7.5f;
+    public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
@@ -16,7 +17,10 @@ public class move_eda : MonoBehaviour, IDamageable
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
-    SpawnPlayers playerManager;
+    private SpawnPlayers playerManager;
+
+    [SerializeField] private Transform player;
+    //[SerializeField] private Transform Spawnpoint;
     
 
     [SerializeField] private Item[] items;
@@ -24,7 +28,7 @@ public class move_eda : MonoBehaviour, IDamageable
     int previousItemIndex;
 
     const float maxHealth = 100f;
-    float currentHealth = maxHealth;
+    float currentHealth;
     
     PhotonView view;
     
@@ -35,7 +39,7 @@ public class move_eda : MonoBehaviour, IDamageable
     {
         characterController = GetComponent<CharacterController>();
         view = GetComponent<PhotonView>();
-        //playerManager = PhotonView.Find((int) view.InstantiationData[0]).GetComponent<SpawnPlayers>();
+        currentHealth = maxHealth;
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -92,6 +96,8 @@ public class move_eda : MonoBehaviour, IDamageable
 
             if (Input.GetMouseButtonDown(0))
                 items[ItemIndex].Use();
+            
+            
         }
         
     }
@@ -111,6 +117,7 @@ public class move_eda : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("took damage" + damage);
         view.RPC("RPC_TakeDamage", RpcTarget.All, damage);
     }
 
@@ -123,7 +130,7 @@ public class move_eda : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
-            
+            player.transform.position = new Vector3(0,3,0);
         }
 
     }
