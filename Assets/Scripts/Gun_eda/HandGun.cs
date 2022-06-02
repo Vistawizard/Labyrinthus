@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class HandGun : Gun
 {
-    public override void Use()
-    {
-        
-    }
+    
 }

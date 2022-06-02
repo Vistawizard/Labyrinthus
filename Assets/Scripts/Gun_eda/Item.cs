@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Item1 : MonoBehaviour
+public class Item : MonoBehaviour
 {
-    public ItemInfo ItemInfo;
+    public ItemInfo itemInfo;
     public GameObject itemGameObject;
 }
