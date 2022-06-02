@@ -20,6 +20,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         current_Health = MaxHealth;
         healthBar.SetMaxHealth(MaxHealth);
     }

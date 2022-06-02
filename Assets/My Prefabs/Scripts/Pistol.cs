@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class Pistol : MonoBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
 
-    public float bullets = 10f;
+    public float bullets;
     public Transform bulletTxt;
 
     public Camera fpsCam;
@@ -17,21 +19,32 @@ public class Pistol : MonoBehaviour
     public AudioSource GunSound;
     public AudioSource ReloadSound;
 
+    PhotonView view;
+
+    private void Start()
+    {
+        view = GetComponent<PhotonView>();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && bullets > 0)
+        if (view.IsMine)
         {
-            Shoot();
-            bulletTxt.GetComponent<Text>().text = bullets.ToString();
-        }
-        if (Input.GetButtonDown("RKey"))
-        {
-            ReloadSound.Play();
-            // yield return new WaitForSeconds(0.1f);
-            bullets = 10f;
-            bulletTxt.GetComponent<Text>().text = bullets.ToString();
+            if (Input.GetButtonDown("Fire1") && bullets > 0)
+            {
+                Shoot();
+                bulletTxt.GetComponent<Text>().text = bullets.ToString();
+            }
+
+            if (Input.GetButtonDown("RKey"))
+            {
+                ReloadSound.Play();
+                // yield return new WaitForSeconds(0.1f);
+                bullets = 10f;
+                bulletTxt.GetComponent<Text>().text = bullets.ToString();
+            }
         }
     }
 

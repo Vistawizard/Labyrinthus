@@ -17,6 +17,10 @@ public class move_eda : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
+    [SerializeField] private Item[] items;
+    int ItemIndex;
+    int previousItemIndex;
+    
     PhotonView view;
     
     [HideInInspector]
@@ -29,7 +33,11 @@ public class move_eda : MonoBehaviour
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        if (!view.IsMine)
+        if (view.IsMine)
+        {
+            EquipItem(0);
+        }
+        else
         {
             playerCamera.enabled = false;
         }
@@ -76,5 +84,19 @@ public class move_eda : MonoBehaviour
                 transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
             }
         }
+        
+    }
+
+    void EquipItem(int _index)
+    {
+        ItemIndex = _index;
+        
+        items[ItemIndex].itemGameObject.SetActive(true);
+        
+        if (previousItemIndex != -1)
+            items[ItemIndex].itemGameObject.SetActive(false);
+
+        previousItemIndex = ItemIndex;
+
     }
 }
