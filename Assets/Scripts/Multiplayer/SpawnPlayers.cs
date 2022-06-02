@@ -12,12 +12,20 @@ public class SpawnPlayers : MonoBehaviour
     public float startX;
     public float startY;
     public float startZ;
-    
 
+    PhotonView view;
+
+    GameObject controller;
+    
     public void Start()
     {
         Vector3 Position = new Vector3(startX, startY, startZ);
-        PhotonNetwork.Instantiate(playerPrefab.name, Position, Quaternion.identity);
+        controller = PhotonNetwork.Instantiate(playerPrefab.name, Position, Quaternion.identity);
     }
-     
+
+    public void Die()
+    {
+        PhotonNetwork.Destroy(controller);
+        Start();
+    }
 }

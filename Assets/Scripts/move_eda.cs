@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;   
 
-public class move_eda : MonoBehaviour
+public class move_eda : MonoBehaviour, IDamageable
 {
    public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
@@ -16,10 +16,15 @@ public class move_eda : MonoBehaviour
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
+    SpawnPlayers playerManager;
+    
 
     [SerializeField] private Item[] items;
     int ItemIndex;
     int previousItemIndex;
+
+    const float maxHealth = 100f;
+    float currentHealth = maxHealth;
     
     PhotonView view;
     
@@ -30,6 +35,7 @@ public class move_eda : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         view = GetComponent<PhotonView>();
+        //playerManager = PhotonView.Find((int) view.InstantiationData[0]).GetComponent<SpawnPlayers>();
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -83,6 +89,9 @@ public class move_eda : MonoBehaviour
                 playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
                 transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
             }
+
+            if (Input.GetMouseButtonDown(0))
+                items[ItemIndex].Use();
         }
         
     }
@@ -98,5 +107,29 @@ public class move_eda : MonoBehaviour
 
         previousItemIndex = ItemIndex;
 
+    }
+
+    public void TakeDamage(float damage)
+    {
+        view.RPC("RPC_TakeDamage", RpcTarget.All, damage);
+    }
+
+    [PunRPC]
+    void RPC_TakeDamage(float damage)
+    {
+        if (!view.IsMine)
+            return;
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            
+        }
+
+    }
+
+    void Die()
+    {
+        playerManager.Die();
     }
 }

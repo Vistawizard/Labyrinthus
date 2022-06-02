@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7299237546509682426}
+  - component: {fileID: 3020758362777762443}
   m_Layer: 0
   m_Name: Gun2Item
   m_TagString: Untagged
@@ -31,6 +32,24 @@ Transform:
   m_Father: {fileID: 5695416793840868343}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3020758362777762443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850655374630680484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc08ffe322f843808f9daefde8f537c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo: {fileID: 11400000, guid: 48f9ff4b0a9684b468efbe732d65a4a3, type: 2}
+  itemGameObject: {fileID: 4998137221377264961}
+  cam: {fileID: 7339781106963722062}
+  GunSound: {fileID: 0}
+  ReloadSound: {fileID: 0}
+  muzzleFlash: {fileID: 0}
 --- !u!1 &1239364453706246731
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,8 +376,8 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   items:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4464696589767418188}
+  - {fileID: 3020758362777762443}
   canMove: 1
 --- !u!114 &8974866387401402848
 MonoBehaviour:
@@ -380,7 +399,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7574295733891349619}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
@@ -937,6 +956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6985084829957274431}
+  - component: {fileID: 4464696589767418188}
   m_Layer: 0
   m_Name: Glock
   m_TagString: Untagged
@@ -959,6 +979,24 @@ Transform:
   m_Father: {fileID: 5695416793840868343}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4464696589767418188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8699928041809894441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc08ffe322f843808f9daefde8f537c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo: {fileID: 11400000, guid: 3db77ef3e0403499aabcaf347070846d, type: 2}
+  itemGameObject: {fileID: 1528663513003245297}
+  cam: {fileID: 7339781106963722062}
+  GunSound: {fileID: 7339781106152214618}
+  ReloadSound: {fileID: 7339781105941753368}
+  muzzleFlash: {fileID: 1818390143532734303, guid: 62e09a13be7f540bf8768c3030fcdc44, type: 3}
 --- !u!1001 &2747180322661061655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,6 +1083,10 @@ PrefabInstance:
     - target: {fileID: 4882981672807781690, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
       propertyPath: bullets
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882981672807781690, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4882981672837948474, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
       propertyPath: m_RootOrder
@@ -1186,6 +1228,16 @@ AudioSource:
 --- !u!82 &7339781107092595985 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4882981672251257094, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
+  m_PrefabInstance: {fileID: 2747180322661061655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7339781105941753368 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4882981673252157967, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
+  m_PrefabInstance: {fileID: 2747180322661061655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7339781106152214618 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4882981673462154317, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
   m_PrefabInstance: {fileID: 2747180322661061655}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7339781107188483900 stripped
