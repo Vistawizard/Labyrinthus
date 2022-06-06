@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;   
 
-public class move_eda : MonoBehaviour, IDamageable
+public class move_eda : MonoBehaviourPunCallbacks, IDamageable
 {
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     [SerializeField] Camera playerCamera;
+    [SerializeField] AudioListener audioListener;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
 
@@ -18,7 +19,8 @@ public class move_eda : MonoBehaviour, IDamageable
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
     private SpawnPlayers playerManager;
-
+    
+    
     [SerializeField] private Transform player;
     //[SerializeField] private Transform Spawnpoint;
     
@@ -27,7 +29,7 @@ public class move_eda : MonoBehaviour, IDamageable
     int ItemIndex;
     int previousItemIndex;
 
-    const float maxHealth = 100f;
+    public float maxHealth;
     float currentHealth;
     
     PhotonView view;
@@ -50,12 +52,15 @@ public class move_eda : MonoBehaviour, IDamageable
         else
         {
             playerCamera.enabled = false;
+            audioListener.enabled = false;
         }
     }
 
     void Update()
     {
-        if (view.IsMine)
+        if (!view.IsMine)
+            return;
+        else
         {
             // We are grounded, so recalculate move direction based on axes
             Vector3 forward = transform.TransformDirection(Vector3.forward);
@@ -97,7 +102,7 @@ public class move_eda : MonoBehaviour, IDamageable
             if (Input.GetMouseButtonDown(0))
                 items[ItemIndex].Use();
             
-            
+
         }
         
     }
@@ -118,7 +123,7 @@ public class move_eda : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         Debug.Log("took damage" + damage);
-        view.RPC("RPC_TakeDamage", RpcTarget.All, damage);
+        //view.RPC("RPC_TakeDamage", RpcTarget.All, damage);
     }
 
     [PunRPC]

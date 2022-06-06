@@ -776,12 +776,14 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   playerCamera: {fileID: 7339781106963722062}
+  audioListener: {fileID: 7339781106963722061}
   lookSpeed: 2
   lookXLimit: 45
   player: {fileID: 7339781105527582765}
   items:
   - {fileID: 4464696589767418188}
   - {fileID: 3020758362777762443}
+  maxHealth: 100
   canMove: 1
 --- !u!114 &6838013982205844733
 MonoBehaviour:
@@ -1172,10 +1174,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 4882981672553900976, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
     - {fileID: 4882981672553900977, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
     - {fileID: 5447481693140199125, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
     - {fileID: 4882981672807781690, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
+    - {fileID: 4882981672553900976, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
 --- !u!1 &7574295733891349619 stripped
 GameObject:
@@ -1185,6 +1187,11 @@ GameObject:
 --- !u!4 &5695416793840868343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7572203089664020448, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
+  m_PrefabInstance: {fileID: 2747180322661061655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &7339781106963722061 stripped
+AudioListener:
+  m_CorrespondingSourceObject: {fileID: 4882981672122186586, guid: 150bbef2a962d40e09bee4ea8fd68d47, type: 3}
   m_PrefabInstance: {fileID: 2747180322661061655}
   m_PrefabAsset: {fileID: 0}
 --- !u!20 &7339781106963722062 stripped
