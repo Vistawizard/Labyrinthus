@@ -326,6 +326,10 @@ PrefabInstance:
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1429157009}
+    - target: {fileID: 5845057594535218371, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7339781105315659686, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
       propertyPath: jumpForce
       value: 400
@@ -391,6 +395,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7407247655859466977, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712929784163755605, guid: 96ecf3decad2042829ec7f1c5791b077, type: 3}
       propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
