@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PortalController : MonoBehaviour
 {
-    public GameObject m_PortalOut;
+    public Transform m_PortalOut;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collided)
     {
-        collision.gameObject.transform.position = m_PortalOut.transform.position;
+        collided.gameObject.transform.position = m_PortalOut.position;
     }
 }

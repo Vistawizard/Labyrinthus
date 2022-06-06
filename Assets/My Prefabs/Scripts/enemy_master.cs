@@ -24,6 +24,7 @@ public class enemy_master : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Distance = Vector3.Distance(Player.transform.position, this.transform.position);
 
         if(Distance <= radius)
@@ -46,6 +47,7 @@ public class enemy_master : MonoBehaviour
         }
 
     }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
