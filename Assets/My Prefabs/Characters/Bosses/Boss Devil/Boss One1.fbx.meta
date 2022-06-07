@@ -2,33 +2,20 @@ fileFormatVersion: 2
 guid: 13811b95963595547a8610f7384fa9e5
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Brown
-    second: {fileID: 2100000, guid: 33a465eb50d43fc43a65eee09d36d9b9, type: 2}
+      74: 5070296949285768726
+    second: Armature|0Base
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cloth
-    second: {fileID: 2100000, guid: 6651339fc695617418d89613273789a0, type: 2}
+      74: 2193708573626547728
+    second: Armature|1Walk
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Devilish red
-    second: {fileID: 2100000, guid: 77e60f8d4ddd1a2459a0de731615e371, type: 2}
+      74: 2882951760427055720
+    second: Armature|2Heabutt
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glowy black
-    second: {fileID: 2100000, guid: b21bb4048de9d47168ec68f8f1fcfff3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Orange
-    second: {fileID: 2100000, guid: 40ae7dcc25e65c2458afad10ae763b5d, type: 2}
+      74: -8949948774796386787
+    second: Armature|3BigKick
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

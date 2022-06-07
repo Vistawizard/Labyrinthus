@@ -2,23 +2,20 @@ fileFormatVersion: 2
 guid: f5eda11403ede36438b7de6853246ae0
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: 5cc950c602f9e494486add9be3c122f9, type: 2}
+      74: 5070296949285768726
+    second: Armature|0Base
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shiny orange
-    second: {fileID: 2100000, guid: a833c400ecac90e4690276439cad1fd4, type: 2}
+      74: 2193708573626547728
+    second: Armature|1Walk
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shiny red eyes
-    second: {fileID: 2100000, guid: cdc4446aec1d4464f83cef3008d4dfba, type: 2}
+      74: 7104007043943288096
+    second: Armature|2SpinAttck
+  - first:
+      74: -5611707961634726627
+    second: Armature|3FrontLegsAttck
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
