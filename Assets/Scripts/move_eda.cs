@@ -138,10 +138,6 @@ public class move_eda : MonoBehaviourPunCallbacks, IDamageable
             player.transform.position = new Vector3(0,3,0);
         }
 
-    }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+    } 
     
 }

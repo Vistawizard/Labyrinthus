@@ -21,17 +21,5 @@ public class SpawnPlayers : MonoBehaviour
     {
         PhotonNetwork.Instantiate("PlayerManager", Vector3.zero, Quaternion.identity);
     }
-
-<<<<<<< Updated upstream
-    // public void Start()
-    // {
-    //     Vector3 Position = new Vector3(startX, startY, startZ);
-    //     controller = PhotonNetwork.Instantiate(playerPrefab.name, Position, Quaternion.identity);
-    // }
-
-   
-=======
     
-    
->>>>>>> Stashed changes
 }
