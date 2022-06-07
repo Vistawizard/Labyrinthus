@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Realtime;
-using Random = System.Random;
+
 
 public class SpawnPlayers : MonoBehaviour
 {
@@ -16,16 +15,18 @@ public class SpawnPlayers : MonoBehaviour
     PhotonView view;
 
     GameObject controller;
-    
+
+
     public void Start()
     {
-        Vector3 Position = new Vector3(startX, startY, startZ);
-        controller = PhotonNetwork.Instantiate(playerPrefab.name, Position, Quaternion.identity);
+        PhotonNetwork.Instantiate("PlayerManager", Vector3.zero, Quaternion.identity);
     }
 
-    public void Die()
-    {
-        PhotonNetwork.Destroy(controller);
-        Start();
-    }
+    // public void Start()
+    // {
+    //     Vector3 Position = new Vector3(startX, startY, startZ);
+    //     controller = PhotonNetwork.Instantiate(playerPrefab.name, Position, Quaternion.identity);
+    // }
+
+   
 }

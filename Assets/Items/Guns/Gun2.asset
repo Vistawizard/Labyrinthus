@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c709e13cfcff64e28b5266a1d98dcb41, type: 3}
   m_Name: Gun2
   m_EditorClassIdentifier: 
-  itemName: Gun2
-  damage: 25
+  itemName: Gun 2
+  damage: 50

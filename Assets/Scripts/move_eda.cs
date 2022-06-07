@@ -140,8 +140,5 @@ public class move_eda : MonoBehaviourPunCallbacks, IDamageable
 
     }
 
-    void Die()
-    {
-        playerManager.Die();
-    }
+    
 }
