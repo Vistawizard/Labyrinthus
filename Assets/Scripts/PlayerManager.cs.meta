@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: db57df1dc61ea4f1cbf74942cae8c1b8
+=======
+<<<<<<< Updated upstream:Assets/Scripts/PlayerController.cs.meta
+guid: 2922cb997cef34d35a4a93c340efdad7
+=======
+guid: db57df1dc61ea4f1cbf74942cae8c1b8
+>>>>>>> Stashed changes:Assets/Scripts/PlayerManager.cs.meta
+>>>>>>> Stashed changes
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
