@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using Image = UnityEngine.UI.Image;
 
 public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 {
     
     [SerializeField] GameObject cameraHolder;
+
+    [SerializeField] Image HealthBarImage;
+    [SerializeField] GameObject ui;
     
     [SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime;
     
@@ -46,6 +50,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         else
         {
             Destroy(GetComponentInChildren<Camera>().gameObject);
+            Destroy(ui);
         }
     }
 
@@ -127,6 +132,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
         currenthealth -= damage;
 
+        HealthBarImage.fillAmount = currenthealth / MaxHealth;
+        
         if (currenthealth <= 0)
         {
             transform.position = new Vector3(-180, 16, 298);
