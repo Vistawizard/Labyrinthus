@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 0caae5899ea0f4484b7eae2167552b8f, type: 2}
---- !u!1 &131761720 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2113962193901819387, guid: ac81e0a90e9304c47a0db09f387d4311, type: 3}
-  m_PrefabInstance: {fileID: 3199950508175019902}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &549152028
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &993499046
 GameObject:
@@ -397,7 +392,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3188231845696893644
 PrefabInstance:
@@ -475,6 +470,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 214929734456326905, guid: ac81e0a90e9304c47a0db09f387d4311, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2113962193901324767, guid: ac81e0a90e9304c47a0db09f387d4311, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -522,6 +521,10 @@ PrefabInstance:
     - target: {fileID: 2113962193901819387, guid: ac81e0a90e9304c47a0db09f387d4311, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102657608246415471, guid: ac81e0a90e9304c47a0db09f387d4311, type: 3}
+      propertyPath: sceneViewId
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac81e0a90e9304c47a0db09f387d4311, type: 3}
@@ -579,7 +582,7 @@ PrefabInstance:
     - target: {fileID: 5846560644325959235, guid: 0c67179e00f384e9dbc41c8a7fd76980, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 131761720}
+      objectReference: {fileID: 0}
     - target: {fileID: 5846560644325959261, guid: 0c67179e00f384e9dbc41c8a7fd76980, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -648,6 +651,6 @@ PrefabInstance:
     - target: {fileID: 7487226862257436951, guid: 1ff92f7a242cd49329ab29083b4f758e, type: 3}
       propertyPath: thePlayer
       value: 
-      objectReference: {fileID: 131761720}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ff92f7a242cd49329ab29083b4f758e, type: 3}
