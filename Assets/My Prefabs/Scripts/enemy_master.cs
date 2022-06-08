@@ -32,14 +32,13 @@ public class enemy_master : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         navComponent = GetComponent<NavMeshAgent>();
         closest = SearchForTarget();
         FollowTarget(closest);
-        //if (Vector3.Distance(transform.position, closest.transform.position) <= minDist)
-            // this is where the player will take damage
-            
+        if (Vector3.Distance(transform.position, closest.transform.position) <= minDist)
+            closest.GetComponent<PlayerController>().TakeDamage(attack_damage);
     }
 
     public GameObject SearchForTarget()

@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
     PhotonView PV;
 
     const float MaxHealth = 100f;
-    float currenthealth = MaxHealth;
+    public float currenthealth = MaxHealth;
     
     private void Awake()
     {
@@ -130,13 +130,16 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         if (!PV.IsMine)
             return;
 
+        if (currenthealth <= 0)
+        {
+            transform.position = new Vector3(-180, 16, 298);
+            currenthealth = 100;
+        }
+        
         currenthealth -= damage;
 
         HealthBarImage.fillAmount = currenthealth / MaxHealth;
         
-        if (currenthealth <= 0)
-        {
-            transform.position = new Vector3(-180, 16, 298);
-        }
+        
     }
 }

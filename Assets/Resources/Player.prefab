@@ -536,6 +536,7 @@ MonoBehaviour:
   items:
   - {fileID: 3471187140651804702}
   - {fileID: 4810605114477260576}
+  currenthealth: 100
 --- !u!54 &5539376343194638060
 Rigidbody:
   m_ObjectHideFlags: 0
