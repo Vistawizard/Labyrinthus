@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
     private void Start()
     {
-
+        PhotonNetwork.LocalPlayer.TagObject = gameObject;
+        
         if (PV.IsMine)
         {
             EquipItem(0);
@@ -132,11 +133,14 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
         currenthealth -= damage;
 
-        HealthBarImage.fillAmount = currenthealth / MaxHealth;
-        
         if (currenthealth <= 0)
         {
             transform.position = new Vector3(-180, 16, 298);
+            currenthealth = 100;
         }
+        
+        HealthBarImage.fillAmount = currenthealth / MaxHealth;
+        
+       
     }
 }

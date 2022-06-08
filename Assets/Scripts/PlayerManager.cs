@@ -12,7 +12,8 @@ public class PlayerManager : MonoBehaviour
     public float startX = -180;
     public float startY = 16;
     public float startZ = 298;
-    
+
+    GameObject player;
 
     private void Awake()
     {
@@ -27,10 +28,10 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    void CreateController()
+    GameObject CreateController()
     {
         Vector3 Position = new Vector3(startX, startY, startZ);
-        PhotonNetwork.Instantiate("Player", Position,Quaternion.identity);
-
+        player = PhotonNetwork.Instantiate("Player", Position,Quaternion.identity);
+        return player;
     }
 }

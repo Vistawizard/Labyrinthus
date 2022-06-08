@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.AI;
+using System.IO;
 
 public class enemy_master : MonoBehaviour
 {
@@ -16,11 +19,20 @@ public class enemy_master : MonoBehaviour
 
     public GameObject Target;
 
+    public GameObject player;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    void Awake()
+    {
+        //player = GameObject.Find("Player(Clone)");
+        // _agent = GetComponent<NavMeshAgent>();
+        // Debug.Log(player);
     }
 
     // Update is called once per frame
@@ -49,10 +61,11 @@ public class enemy_master : MonoBehaviour
         int i = 0;
         while (i < hitColliders.Length)
         {
-            if (hitColliders[i].transform.tag == "Player")
+            if (hitColliders[i].transform.tag == "Player(Clone)")
             {
-                Target = hitColliders[i].transform.gameObject;
-                Debug.Log("Found player");
+                Target = player;
+                Debug.Log(Target);
+                //Debug.Log("Found player");
             }
             i++;
         }
