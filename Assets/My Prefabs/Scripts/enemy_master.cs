@@ -6,61 +6,74 @@ using UnityEngine.AI;
 public class enemy_master : MonoBehaviour
 {
     public float Distance;
+    public float radius = 10f;
     public float movementSpeed;
 
     public bool isAngered;
     public bool isDead;
 
-    public GameObject enemy;
-    public GameObject closest;
+    public NavMeshAgent _agent;
 
-    public Transform PlayerPosition;
-
-    public NavMeshAgent navComponent;
+    public GameObject Target;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        navComponent = GetComponent<NavMeshAgent>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        navComponent = GetComponent<NavMeshAgent>();
-        closest = SearchForTarget();
-        FollowTarget(closest);
-    }
-
-
-    public GameObject SearchForTarget()
-    {
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag("Player");
-        GameObject _closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-        foreach (GameObject go in gos)
+        if (!isDead)
         {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
+            if (Target == null)
             {
-                _closest = go;
-                distance = curDistance;
+                SearchForTarget();
             }
+            else
+            {
+                FollowTarget();
+            }
+
         }
-        Debug.Log("FoundPlayer");
-        return _closest;
+
     }
 
-    public void FollowTarget(GameObject target)
+    void SearchForTarget()
     {
-        Debug.Log(target.transform.position);
+        
+        Vector3 center = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        Collider[] hitColliders = Physics.OverlapSphere(center, 100);
+        int i = 0;
+        while (i < hitColliders.Length)
+        {
+            if (hitColliders[i].transform.tag == "Player")
+            {
+                Target = hitColliders[i].transform.gameObject;
+                Debug.Log("Found player");
+            }
+            i++;
+        }
+    }
 
-        navComponent.speed = movementSpeed;
-        navComponent.SetDestination(target.transform.position);
+    void FollowTarget()
+    {
+        Vector3 targetPosition = Target.transform.position;
+        targetPosition.y = transform.position.y;
+        transform.LookAt(targetPosition);
 
+        float distance = Vector3.Distance(Target.transform.position, this.transform.position);
+        if (distance > 30)
+        {
+            transform.Translate(Vector3.forward * movementSpeed);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
