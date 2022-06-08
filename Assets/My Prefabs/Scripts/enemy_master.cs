@@ -14,6 +14,7 @@ public class enemy_master : MonoBehaviour
     public GameObject enemy;
     public GameObject closest;
 
+
     public Transform PlayerPosition;
 
     public NavMeshAgent navComponent;
@@ -56,8 +57,8 @@ public class enemy_master : MonoBehaviour
 
     public void FollowTarget(GameObject target)
     {
-        Debug.Log(target.transform.position);
         navComponent.speed = movementSpeed;
+
         navComponent.SetDestination(target.transform.position);
     }
 
