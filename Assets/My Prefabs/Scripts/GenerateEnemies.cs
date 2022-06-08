@@ -10,6 +10,8 @@ public class GenerateEnemies : MonoBehaviour
     public int enemyCount;
     public float spawnRadius = 7f;
 
+    public float delay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class GenerateEnemies : MonoBehaviour
 
     IEnumerator EnemyDrop()
     {
+        yield return new WaitForSeconds(delay);
         while (enemyCount < maxEnemies)
         {
             Vector3 spawnPos = thePlayer.transform.position; //Spawning an enemy
