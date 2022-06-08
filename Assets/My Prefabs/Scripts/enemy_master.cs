@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class enemy_master : MonoBehaviour
 {
     public float minDist = 2;
     public float movementSpeed;
 
+    public int attack_damage = 3;
+    
     public bool isAngered;
     public bool isDead;
 
     public GameObject enemy;
     public GameObject closest;
-
+    
+    //private float health = 20;
 
     public Transform PlayerPosition;
 
     public NavMeshAgent navComponent;
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +37,9 @@ public class enemy_master : MonoBehaviour
         navComponent = GetComponent<NavMeshAgent>();
         closest = SearchForTarget();
         FollowTarget(closest);
-        if (Vector3.Distance(transform.position, closest.transform.position) <= minDist)
+        //if (Vector3.Distance(transform.position, closest.transform.position) <= minDist)
             // this is where the player will take damage
-            Debug.Log("AI attack");
+            
     }
 
     public GameObject SearchForTarget()
@@ -64,4 +69,28 @@ public class enemy_master : MonoBehaviour
         navComponent.SetDestination(target.transform.position);
     }
 
+    // public void TakeDamage(float damage)
+    // {
+    //     Debug.Log("took damage");
+    //     
+    //     health -= damage;
+    //     
+    //     if (health <= 0)
+    //     {
+    //         Destroy(this);
+    //     }
+    // }
+    //
+    // [PunRPC]
+    // void RPC_TakeDamage(float damage)
+    // {
+    //     Debug.Log("took damage");
+    //     health -= damage;
+    //     
+    //     if (health <= 0)
+    //     {
+    //         Destroy(this);
+    //     }
+    // }
+    
 }
