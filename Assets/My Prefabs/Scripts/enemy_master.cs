@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class enemy_master : MonoBehaviour
 {
-    public float Distance;
+    public float minDist = 2;
     public float movementSpeed;
 
     public bool isAngered;
@@ -32,6 +32,9 @@ public class enemy_master : MonoBehaviour
         navComponent = GetComponent<NavMeshAgent>();
         closest = SearchForTarget();
         FollowTarget(closest);
+        if (Vector3.Distance(transform.position, closest.transform.position) <= minDist)
+            // this is where the player will take damage
+            Debug.Log("AI attack");
     }
 
     public GameObject SearchForTarget()
@@ -51,7 +54,6 @@ public class enemy_master : MonoBehaviour
                 distance = curDistance;
             }
         }
-        Debug.Log("FoundPlayer");
         return _closest;
     }
 
