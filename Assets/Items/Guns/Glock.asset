@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Glock
   m_EditorClassIdentifier: 
   itemName: Glock
-  damage: 50
+  damage: 10
