@@ -25,7 +25,6 @@ public class PickupScript : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, distance))
         {
-            Debug.Log("I can grab it!");
             currentWeapon = hit.transform.gameObject;
             canGrab = true;
         }
