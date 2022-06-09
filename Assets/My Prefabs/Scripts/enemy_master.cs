@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class enemy_master : MonoBehaviour
     public float minDist = 2;
     public float movementSpeed;
 
-    public int attack_damage = 3;
+    public int attack_damage = 1;
     
     public bool isAngered;
     public bool isDead;
@@ -35,11 +36,15 @@ public class enemy_master : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         navComponent = GetComponent<NavMeshAgent>();
         closest = SearchForTarget();
         FollowTarget(closest);
+    }
+
+    void FixedUpdate()
+    {
         if (Vector3.Distance(transform.position, closest.transform.position) <= minDist)
         {
             StartCoroutine(Attack());
