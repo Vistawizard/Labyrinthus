@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Target : MonoBehaviour
@@ -6,6 +7,8 @@ public class Target : MonoBehaviour
 
     // Start is called before the first frame update
     public float health;
+    
+    
 
     public void TakeDamage(float amount)
     {
