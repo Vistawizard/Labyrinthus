@@ -22,6 +22,9 @@ public class enemy_master : MonoBehaviour
     public Transform PlayerPosition;
 
     public NavMeshAgent navComponent;
+    public float delay;
+    [SerializeField] private Animator PowAttack;
+    
 
     
 
@@ -38,7 +41,19 @@ public class enemy_master : MonoBehaviour
         closest = SearchForTarget();
         FollowTarget(closest);
         if (Vector3.Distance(transform.position, closest.transform.position) <= minDist)
-            closest.GetComponent<PlayerController>().TakeDamage(attack_damage);
+        {
+            StartCoroutine(Attack());
+        }
+        else
+            PowAttack.SetBool("powAttack", false);
+            
+    }
+
+    IEnumerator Attack()
+    {
+        PowAttack.SetBool("powAttack", true);
+        yield return new WaitForSeconds(delay);
+        closest.GetComponent<PlayerController>().TakeDamage(attack_damage);
     }
 
     public GameObject SearchForTarget()
