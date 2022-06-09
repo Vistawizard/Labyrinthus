@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
     Vector3 smoothMoveVelocity;
     Vector3 moveAmount;
 
+    public ParticleSystem muzzleFlash;
+    
     Rigidbody rb;
 
     PhotonView PV;
@@ -47,6 +49,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
         if (PV.IsMine)
         {
+            // foreach (var item in items)
+            // {
+            //     item.itemGameObject.
+            // }
             EquipItem(0);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -66,14 +72,50 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         Move();
         Jump();
         
-        
+<<<<<<< Updated upstream
+        if(Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+        {
+            
+=======
+        if(Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+>>>>>>> Stashed changes
+            if(itemIndex >= items.Length - 1)
+            {
+                EquipItem(0);
+            }
+            else
+            {
+                EquipItem(itemIndex + 1);
+            }
+        }
+<<<<<<< Updated upstream
+        else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
+        {
+            
+=======
+        else if(Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+>>>>>>> Stashed changes
+            if(itemIndex <= 0)
+            {
+                EquipItem(items.Length - 1);
+            }
+            else
+            {
+                EquipItem(itemIndex - 1);
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
+        {
             items[itemIndex].Use();
+            muzzleFlash.Play();
+        }
         if (Input.GetButtonDown("FKey"))
         {
             if (isOn == false)
             {
-                Debug.Log("accessed");
                 lightSource.SetActive(true);
                 isOn = true;
             }
@@ -121,7 +163,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
     void EquipItem(int _index)
     {
-        if (_index == previousItemIndex)
+        
+        if(_index == previousItemIndex)
             return;
 
         itemIndex = _index;
@@ -157,7 +200,5 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         currenthealth -= damage;
 
         HealthBarImage.fillAmount = currenthealth / MaxHealth;
-        
-        
     }
 }
