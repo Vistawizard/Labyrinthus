@@ -514,8 +514,13 @@ MonoBehaviour:
   isOn: 0
   failsafe: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   muzzleFlash: {fileID: 1694390026265494963}
   currenthealth: 100
+=======
+  muzzleFlash: {fileID: 158565839042475392}
+  currenthealth: 150
+>>>>>>> Stashed changes
 =======
   muzzleFlash: {fileID: 158565839042475392}
   currenthealth: 150

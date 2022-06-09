@@ -73,9 +73,14 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         Jump();
         
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if(Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
         {
             
+=======
+        if(Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+>>>>>>> Stashed changes
 =======
         if(Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
@@ -90,9 +95,14 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
             }
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
         {
             
+=======
+        else if(Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+>>>>>>> Stashed changes
 =======
         else if(Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
