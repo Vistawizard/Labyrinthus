@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
     
     [SerializeField] Item[] items;
     
+    public GameObject lightSource;
+    public bool isOn = false;
+    public bool failsafe = false;
+    
     int itemIndex;
     int previousItemIndex = -1;
     
@@ -65,6 +69,20 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         
         if (Input.GetMouseButtonDown(0))
             items[itemIndex].Use();
+        if (Input.GetButtonDown("FKey"))
+        {
+            if (isOn == false)
+            {
+                Debug.Log("accessed");
+                lightSource.SetActive(true);
+                isOn = true;
+            }
+            else
+            {
+                isOn = false;
+                lightSource.SetActive(false);
+            }
+        }
     }
 
     void Look()
