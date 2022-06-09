@@ -7,7 +7,7 @@ using Photon.Pun;
 
 public class enemy_master : MonoBehaviour
 {
-    public float minDist = 2;
+    public float minDist = 1;
     public float movementSpeed;
 
     public int attack_damage = 1;
@@ -88,28 +88,5 @@ public class enemy_master : MonoBehaviour
         navComponent.SetDestination(target.transform.position);
     }
 
-    // public void TakeDamage(float damage)
-    // {
-    //     Debug.Log("took damage");
-    //     
-    //     health -= damage;
-    //     
-    //     if (health <= 0)
-    //     {
-    //         Destroy(this);
-    //     }
-    // }
-    //
-    // [PunRPC]
-    // void RPC_TakeDamage(float damage)
-    // {
-    //     Debug.Log("took damage");
-    //     health -= damage;
-    //     
-    //     if (health <= 0)
-    //     {
-    //         Destroy(this);
-    //     }
-    // }
     
 }

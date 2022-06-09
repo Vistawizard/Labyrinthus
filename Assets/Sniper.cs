@@ -25,6 +25,7 @@ public class Sniper : Gun
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage);
+            hit.collider.gameObject.GetComponent<Target>()?.TakeDamage(((GunInfo)itemInfo).damage);
         }
     }
 }
