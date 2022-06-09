@@ -66,20 +66,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         Move();
         Jump();
         
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        if(Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
-        {
-            
-=======
+
         if(Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
->>>>>>> Stashed changes
-=======
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f)
-        {
->>>>>>> Stashed changes
+
             if(itemIndex >= items.Length - 1)
             {
                 EquipItem(0);
@@ -89,19 +79,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
                 EquipItem(itemIndex + 1);
             }
         }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
         else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
         {
             
-=======
-        else if(Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
->>>>>>> Stashed changes
-=======
-        else if(Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
->>>>>>> Stashed changes
             if(itemIndex <= 0)
             {
                 EquipItem(items.Length - 1);
@@ -112,9 +93,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
             }
         }
 
-=======
-        
->>>>>>> parent of fe469b1 (alright alright alright)
+
         if (Input.GetMouseButtonDown(0))
             items[itemIndex].Use();
         if (Input.GetButtonDown("FKey"))
